@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KiddoLearn</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container-fluid bg-dark">
+        <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+          <div class="col-md-3 mb-2 mb-md-0">
+            <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
+              <svg class="bi" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
+            </a>
+          </div>
+    
+          <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+            <li><a href="#" class="nav-link px-2 text-warning">Home</a></li>
+            <li><a href="#" class="nav-link px-2 text-warning" onclick="math_tutorials()">Maths</a></li>
+            <li><a href="#" class="nav-link px-2 text-warning" onclick="english_tutorials()">English</a></li>
+            <li><a href="#mission" class="nav-link px-2 text-warning">Mission</a></li>
+          </ul>
+    
+          <div class="col-md-3 text-end">
+            <button type="button" class="btn btn-outline-warning"><a href="index.html" onmouseover="this.style.color='black'"
+              onmouseout="this.style.color='orange'" style="text-decoration: none;color: orange;">Logout</a></button>
+          </div>
+        </header>
+      </div>
+
+      <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-11 col-sm-11">
+              <div class="col-10 bg-dark mx-auto rounded mt-4 mb-2 pb-2">
+                <h3 class="text-center text-warning">Self Introduction</h3>
+
+                <script>
+                  if(window.location.search){
+                    var queryString = window.location.search;
+                    var urlParams = new URLSearchParams(queryString);
+                    name = urlParams.get('name');
+                    age = urlParams.get('age');
+                    clas = urlParams.get('class');
+
+                    document.write(`
+                    <div class="col">
+                      <h5 class="text-info mx-2 my-1" style="display: inline;">Hi, My name is</h5>
+                      <h5 class="text-warning my-1" style="display: inline;">`+name+`</h5>
+                    </div>
+                      <div class="col my-2">
+                        <h5 class="text-info mx-2 my-1" style="display: inline;">I am </h5>
+                        <h5 class="text-warning my-1" style="display: inline;">`+age+`</h5>
+                      <h5 class="text-info mx-2 my-1" style="display: inline;">Years Old</h5>
+                      </div>
+                      <div class="col">
+                        <h5 class="text-info mx-2 my-1" style="display: inline;">I read in class</h5>
+                        <h5 class="text-warning my-1" style="display: inline;">`+clas+`</h5>
+                      </div>
+                    `);
+                  }else{
+                    document.write(`
+                    <div class="col">
+                      <h5 class="text-info mx-2 my-1" style="display: inline;">Hi, My name is</h5>
+                    <input type="text" id="name" class="bg-dark text-info w-50 rounded border-info">
+                    </div>
+                      <div class="col my-2">
+                        <h5 class="text-info mx-2 my-1" style="display: inline;">I am </h5>
+                      <input type="number" id="age" class="bg-dark text-info rounded border-info" style="width: 12%;">
+                      <h5 class="text-info mx-2 my-1" style="display: inline;">Years Old</h5>
+                      </div>
+
+                      <div class="col">
+                        <h5 class="text-info mx-2 my-1" style="display: inline;">I read in class</h5>
+                      <input type="number" id="class" class="bg-dark text-info rounded border-info" style="width: 8%;">
+                      </div>
+                      <div class="col-1 mx-auto">
+                        <button class="btn btn-outline-info mb-2" onclick="submit()">Submit</button>
+                      </div>
+                    `);
+                  }
+                </script>
+              </div>
+
+              <div class="col-10 border rounded mx-auto mt-4 mb-2 pb-2" style="height: 250px; background-image: url(https://epe.brightspotcdn.com/dims4/default/97ccf5c/2147483647/strip/true/crop/600x338+0+31/resize/1200x675!/quality/90/?url=https%3A%2F%2Fepe-brightspot.s3.us-east-1.amazonaws.com%2F10%2Fea%2F853a6ef53f64b4418351282d12dc%2F32sun-article-getty.jpg); background-size: cover;">
+                <div class="col-1 mx-auto my-auto pt-5 mt-5">
+                  <button type="button" onclick="math_tutorials()" class="btn btn-outline-success fw-bolder">Maths Tutorials</button>
+                </div>
+              </div>
+
+              <div class="col-10 border rounded mx-auto mt-4 mb-2 pb-2" style="height: 250px; background-image: url(https://www.vedantu.com/seo/content-images/c59b0a82-e317-45cf-a74b-c65ebc3ad1f8.png); background-size: cover;">
+                <div class="col-1 mx-auto my-auto pt-5 mt-5">
+                  <button type="button" onclick="english_tutorials()" class="btn btn-outline-primary fw-bolder">English Tutorials</button>
+                </div>
+              </div>
+
+              <div class="col-10 border rounded mx-auto mt-4">
+                <h3 class="text-center bg-dark text-warning p-4 m-3 rounded" id="mission">Our Mission</h3>
+                <p class="px-3 fw-bold">At KiddoLearn, we're on a mission to make learning a captivating adventure for every child. We strive to:</p>
+                <h5 class="p-3 fw-bold">1. Spark Lifelong Curiosity:</h5>
+                <p class="px-3 fw-bold">Inspire a love for learning that lasts a lifetime by providing engaging tutorials and activities.
+                </p>
+
+                <h5 class="p-3 fw-bold">2. Blend Fun with Education:</h5>
+                <p class="px-3 fw-bold">Make English and Math enjoyable through interactive games, ensuring accessibility and breaking learning barriers.</p>
+
+                <h5 class="p-3 fw-bold">3. Empower Personal Progress:</h5>
+                <p class="px-3 fw-bold">Tailor learning experiences to individual needs, fostering confidence and accomplishment at their pace.
+                </p>
+
+                <h5 class="p-3 fw-bold">4. Cultivate a Positive Community:</h5>
+                <p class="px-3 fw-bold">Build an inclusive online space where students, parents, and educators collaborate, share, and celebrate the joy of learning.
+                </p>
+
+                <h5 class="p-3 fw-bold">5. Embrace Educational Innovation:</h5>
+                <p class="px-3 fw-bold">Stay ahead in education technology, offering dynamic and relevant content that adapts to 21st-century needs.
+                </p>
+                <br>
+                <p class="px-3 fw-bold">Join us at KiddoLearn, where education becomes an exciting journey, shaping future thinkers, problem solvers, and compassionate leaders.</p>
+
+              
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-10 border rounded mx-auto mt-4">
+                <h4 class="text-center text-warning mb-4 p-4 bg-dark rounded mx-auto">English Course</h4>
+
+                <div class="card p-4 mt-3 mb-4 mx-auto rounded text-bg-dark" style="width: 18rem;">
+                  <img src="https://marketplace.canva.com/EAFjDC6tSN4/1/0/1600w/canva-upper-case-and-lower-case-alphabet-flashcards-in-colorful-and-playful-style-931Wg0u97k4.jpg" height="110px" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-text text-warning mt-1">Learn Alphabets with rythm</h5>
+                  </div>
+                  <button type="button" class="btn btn-outline-warning"><a href="show_video.html?id=1" onmouseover="this.style.color='black'"
+                         onmouseout="this.style.color='orange'" style="text-decoration: none;color: orange;">Watch Video</a></button>
+                </div>
+
+                <div class="card p-4 mt-3 mb-4 mx-auto rounded text-bg-dark" style="width: 18rem;">
+                  <img src="https://static.wixstatic.com/media/08cbcd_9e9ef85c040c42fda09aaa32402be5d7~mv2.png/v1/fill/w_300,h_300,al_c,lg_1,q_85,enc_auto/08cbcd_9e9ef85c040c42fda09aaa32402be5d7~mv2.png" height="110px" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-text text-warning mt-1">Small And Capital Letter</h5>
+                  </div>
+                  <button type="button" class="btn btn-outline-warning"><a href="show_video.html?id=2" onmouseover="this.style.color='black'"
+                          onmouseout="this.style.color='orange'" style="text-decoration: none;color: orange;">Watch Video</a></button>
+                </div>
+                <div class="card p-4 mt-3 mb-4 mx-auto rounded text-bg-dark" style="width: 18rem;">
+                  <img src="data:image/png;base64,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" height="110px" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-text text-warning mt-1">Learn Vowels</h5>
+                  </div>
+                  <button type="button" class="btn btn-outline-warning"><a href="show_video.html?id=3" onmouseover="this.style.color='black'"
+                          onmouseout="this.style.color='orange'" style="text-decoration: none;color: orange;">Watch Video</a></button>
+                </div>
+                
+                <h4 class="text-center text-info mb-4 p-4 bg-dark rounded"> Math</h4>
+
+                <div class="card p-4 mt-3 mb-4 mx-auto rounded text-bg-dark" style="width: 18rem;">
+                  <img src="https://img.freepik.com/free-vector/cartoon-number-collection-with-characters_23-2147823080.jpg" height="110px" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-text text-info mt-1">Learn Numbers and Counting</h5>
+                  </div>
+                  <button type="button" class="btn btn-outline-info"><a href="show_video.html?id=4" onmouseover="this.style.color='black'"
+                          onmouseout="this.style.color='#0DCAF0'" style="text-decoration: none;color: #0DCAF0;">Watch Video</a></button>
+                </div>
+                
+                <div class="card p-4 mt-3 mb-4 mx-auto rounded text-bg-dark" style="width: 18rem;">
+                  <img src="https://cdn1.byjus.com/wp-content/uploads/2020/10/Binary-Operation.png" height="110px" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-text text-info mt-1">Binary Operations</h5>
+                  </div>
+                  <button type="button" class="btn btn-outline-info"><a href="show_video.html?id=5" onmouseover="this.style.color='black'"
+                          onmouseout="this.style.color='#0DCAF0'" style="text-decoration: none;color: #0DCAF0;">Watch Video</a></button>
+                </div>
+            </div>
+
+            
+        </div>
+      </div>
+      <div class="container-fluid pb-1 bg-dark">
+        <footer class="py-3 my-4">
+          <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-warning text-warning">Home</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-warning text-warning" onclick="math_tutorials()">Maths</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-warning text-warning" onclick="english_tutorials()">English</a></li>
+            <li class="nav-item"><a href="#mission" class="nav-link px-2 text-body-warning text-warning">Mission</a></li>
+          </ul>
+          <p class="text-center text-body-warning text-warning">© 2023 KiddoLearn, Inc</p>
+        </footer>
+      </div>
+      <script>
+        function submit(){
+          var name = document.getElementById("name").value;
+          var age = document.getElementById("age").value;
+          var clas = document.getElementById("class").value;
+          if(name == "" || age == "" || clas == ""){
+            return 0;
+          }else{
+          window.location.href= 'home.html?name='+name+'&age='+age+'&class='+clas ;
+          }
+        }
+
+        function math_tutorials(){
+          var randomValue = Math.random();
+          var id = Math.round(randomValue) + 4;
+           window.location.href= 'show_video.html?id='+id;
+        }
+
+        function english_tutorials(){
+          var id = Math.floor(Math.random() * 3) + 1;
+           window.location.href= 'show_video.html?id='+id;
+        }
+      </script>
+</body>
+</html>
